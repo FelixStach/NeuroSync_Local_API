@@ -1,0 +1,2 @@
+The server.ico file used for the executable was obtained from Flaticon:
+<a href="https://www.flaticon.com/free-icons/server" title="server icons">Server icons created by Freepik - Flaticon</a>
