@@ -7,6 +7,7 @@ from flask import request, jsonify
 import numpy as np
 import torch
 import flask
+import time
 
 from utils.generate_face_shapes import generate_facial_data_from_bytes
 from utils.model.model import load_model
@@ -20,6 +21,8 @@ print("Activated device:", device)
 model_path = 'utils/model/model.pth'
 blendshape_model = load_model(model_path, config, device)
 
+start_time = time.time()
+
 @app.route('/audio_to_blendshapes', methods=['POST'])
 def audio_to_blendshapes_route():
     audio_bytes = request.data
@@ -28,5 +31,11 @@ def audio_to_blendshapes_route():
 
     return jsonify({'blendshapes': generated_facial_data_list})
 
+@app.route('/uptime', methods=['GET'])
+def uptime_route():
+    current_time = time.time()
+    uptime = current_time - start_time
+    return jsonify({'uptime': uptime})
+
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000)
+    app.run(host='127.0.0.1', port=5000, threaded=True)

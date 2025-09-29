@@ -1,3 +1,11 @@
+# Felix NeuroSync Local API Fork
+
+- Provides Batch file to build a standalone executable from the Local API
+- Proveds icon for executable
+- Additional 'uptime' route for flask server
+- flask server now runs multithreaded
+
+
 # NeuroSync Local API
 
 ## 29/03/2025 Update to model.pth and model.py
