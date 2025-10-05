@@ -4,6 +4,7 @@
 - Proveds icon for executable
 - Additional 'uptime' route for flask server
 - flask server now runs multithreaded
+- removed some emojis from the print code to avoid problems with piping the output in c++
 
 
 # NeuroSync Local API

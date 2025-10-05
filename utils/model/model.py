@@ -35,9 +35,9 @@ def load_model(model_path, config, device):
     # Convert the model to half precision if applicable
     if use_half_precision and device.type == 'cuda':
         model = model.to(torch.float16)
-        print("⚡ Model converted to float16 (half-precision).")
+        print("Model converted to float16 (half-precision).")
     else:
-        print("🚫 Half-precision not applied (CPU or unsupported GPU or False set in config).")
+        print("Half-precision not applied (CPU or unsupported GPU or False set in config).")
 
     model.eval()
     return model
